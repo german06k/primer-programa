@@ -1,0 +1,33 @@
+# Hola Mundo con Docker
+
+## Descripción
+
+Aplicación web desarrollada en PHP que muestra un mensaje **Hola Mundo** y realiza una conexión a una base de datos MySQL.
+
+## Tecnologías
+
+- PHP 8.2
+- Apache
+- MySQL 8
+- Docker
+- Docker Compose
+
+## Ejecutar
+
+```bash
+docker compose up --build
+```
+
+## Abrir en el navegador
+
+```
+http://localhost:8080
+```
+
+## Resultado esperado
+
+```
+Hola Mundo
+Conexión exitosa a MySQL
+Fecha del servidor
+```
