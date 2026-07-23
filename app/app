@@ -1,0 +1,71 @@
+<?php
+include 'db.php';
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hola Mundo con Docker</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            text-align:center;
+            margin-top:100px;
+        }
+        .card{
+            width:600px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+        h1{
+            color:#0077cc;
+        }
+        p{
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🚀 Hola Mundo</h1>
+
+<p>Aplicación Web usando Docker + PHP + MySQL</p>
+
+<?php
+
+if($conn){
+
+    echo "<h2 style='color:green;'>✅ Conexión exitosa a MySQL</h2>";
+
+    $sql="SELECT NOW() AS fecha";
+
+    $resultado=$conn->query($sql);
+
+    if($resultado){
+
+        $fila=$resultado->fetch_assoc();
+
+        echo "<p><b>Fecha del servidor:</b> ".$fila["fecha"]."</p>";
+
+    }
+
+}else{
+
+    echo "<h2 style='color:red;'>❌ Error al conectar con MySQL</h2>";
+
+}
+
+?>
+
+</div>
+
+</body>
+</html>
